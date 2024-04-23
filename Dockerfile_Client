@@ -1,0 +1,15 @@
+# Dockerfile for React frontend
+FROM node:latest
+
+WORKDIR /app
+
+COPY . .
+
+# Install dependencies
+RUN npm install
+
+# Expose port 5173 (assuming React app runs on port 5173)
+EXPOSE 5173
+
+# Command to run the React app
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]

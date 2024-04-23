@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  client:
+    image: reetjain01/21bcp221_client
+    ports:
+      - "5173:5173"  # Expose port 5173 of the container to port 5173 of the host
+    environment:
+      - VITE_PORT=5173  # Set environment variable for Vite port
+
+  backend:
+    image: reetjain01/21bcp221_backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://jainreet112:reetjain@mongodb:27017/fruit-deliver-webapp
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_DATABASE=fruit-deliver-webapp
+      - MONGO_INITDB_ROOT_USERNAME=jainreet112
+      - MONGO_INITDB_ROOT_PASSWORD=reetjain
