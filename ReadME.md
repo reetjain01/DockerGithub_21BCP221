@@ -1,5 +1,3 @@
-markdown
-`markdown
 
 # Fruit Delivery Website using MERN Stack
 
@@ -107,6 +105,5 @@ To stop and delete containers, run:
 bash
 docker-compose down
 
-`markdown
 
 This markdown code will display the entire content, including the code blocks, within a box-like format when rendered.
